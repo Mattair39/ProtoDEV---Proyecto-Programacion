@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ProtoDEV___Proyecto_Programacion.Models.Producto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-3">
+            <div class="card my-2 store card custom-bg-color">
+                <img src="@item.imagenURL" class="card-img-top-custom">
+                <div class="card-body" style="height:6em;">
+                    <a class="a-cleanup" asp-controller="Tiendas" asp-route-id="@item.id">
+                        <h5 class="mb-3">@item.nombre</h5>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <span class="card-text">@item.precioVenta.ToString("c")</span>
+                    <a asp-controller="Carritos" asp-action="AgregarAlCarrito" asp-route-id="@item.id" class="btn btn-primary">
+                        Agregar al Carrito
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

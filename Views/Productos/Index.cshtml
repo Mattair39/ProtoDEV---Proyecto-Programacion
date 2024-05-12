@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ProtoDEV___Proyecto_Programacion.Models.Producto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (TempData["success"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData["success"]');
+    </script>
+}
+@if (TempData["error"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.error('@TempData["error"]');
+    </script>
+}
+<div class "container">
+    <div class="row pt-4 ">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Lista de Productos
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Productos" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle-dotted"> </i>Añadir Nuevo Producto
+            </a>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fabricante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SKU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precioVenta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fabricante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SKU)
+            </td>
+            <td>
+               $ @Html.DisplayFor(modelItem => item.precioVenta)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-success">
+                            <i class="bi bi-pencil"></i> Editar
+                </a> 
+                <a asp-action="Details" asp-route-id="@item.id" class="btn btn-info">
+                            <i class="bi bi-info-circle-fill"></i> Detalles
+                            </a>
+                <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">
+                            <i class="bi bi-trash-fill"></i> Eliminar
+                        </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
