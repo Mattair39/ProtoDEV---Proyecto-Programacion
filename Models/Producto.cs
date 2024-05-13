@@ -57,8 +57,8 @@ namespace ProtoDEV___Proyecto_Programacion.Models
         public Categoria? Categoria { get; set; }
 
         [DisplayName("URL Imagen")]
-
-        
+        [AllowNull]
+        [Required]
         public string imagenURL { get; set; }
     }
 }

@@ -1,8 +1,246 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    
+    <style>
+        .container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        .left-content {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .right-content {
+            position: relative;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        .carousel-control-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+            .carousel-control-buttons button {
+                background: none;
+                color: #007bff;
+                border: none;
+                padding: 5px;
+                cursor: pointer;
+            }
+
+                .carousel-control-buttons button:focus {
+                    outline: none;
+                }
+
+        .carousel-control-prev-icon::before,
+        .carousel-control-next-icon::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url('sutil-flecha.svg') no-repeat center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-content">
+            <h1 class="display-4">Herramientas de Calidad Para Tus Proyectos de Electrónica y Software</h1>
+            <a href="/Tiendas" class="btn btn-info">Acceder al Catálogo</a> 
+        </div>
+        <div class="right-content">
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/inicio/arduinoleds.jpg" class="d-block w-100" alt="Imagen 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/inicio/raspberry pi.jpg" class="d-block w-100" alt="Imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/inicio/lab robotica.jpg" class="d-block w-100" alt="Imagen 3">
+                    </div>
+                </div>
+                <div class="carousel-control-buttons">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+ <style>
+.container {
+    background-color: #f8f9fa; /* Color de fondo gris claro */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.left-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.beneficios-container {
+    background-color: #f8f9fa; /* Mismo color de fondo que el primer bloque */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.beneficios-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye el espacio entre el texto y la imagen */
+}
+
+.beneficios-texto {
+    flex: 2; /* El texto ocupa más espacio que la imagen */
+}
+
+.beneficio-item {
+    text-align: center;
+}
+
+.img-container {
+    flex: 1; /* La imagen ocupa menos espacio que el texto */
+}
+
+.img-thumbnail {
+    border: 2px solid black;
+}
+</style>
+
+<body>
+
+    <div class="container">
+        </div>
+    </div>
+
+    <div class="container mt-5 beneficios-container">
+        <div class="beneficios-content">
+            <div class="beneficios-texto text-center">
+                <h2>Beneficios</h2>
+                <p>Proto DEV se conceptualiza como un e-commerce desarrollado para el espacio web el cual se especializa el suministro y venta de componentes electrónicos puntuales como placas de desarrollo, componentes electrónicos y herramientas, enfocadas al desempeño de actividades llevadas a cabo por desarrolladores, entusiastas de la electrónica, profesionales, estudiantes y de más; quienes desean encontrar y adquirir equipo para realizar sus proyectos de manera eficiente y creativa; contando con un extenso catálogo y los precios más competitivos del mercado.</p>
+
+                <div class="row">
+                    <div class="col-md-6 beneficio-item">
+                        <h4><i class="bi bi-cash-coin"></i> Precios Mas Competitivos</h4>
+                        <p>Al no tener los gastos asociados a un local físico ni contar con intermediarios, se pueden ofrecer precios más bajos que las tiendas tradicionales.</p>
+                    </div>
+                    <div class="col-md-6 beneficio-item">
+                        <h4><i class="bi bi-folder"></i> Mayor Variedad de Productos</h4>
+                        <p>Se ofrece una gama más amplia de productos electrónicos que las tiendas físicas, con una selección cuidadosamente curada de placas de desarrollo populares, protoboards, kits de inicio y una variedad de componentes electrónicos esenciales.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 beneficio-item">
+                        <h4><i class="bi bi-house"></i> Comodidad y Accesibilidad</h4>
+                        <p>Los clientes pueden comprar desde cualquier lugar y en cualquier momento, sin tener que desplazarse a tiendas físicas; lo que es especialmente valioso para aquellos que habitan en zonas rurales o remotas con acceso limitado.p>
+                    </div>
+                    <div class="col-md-6 beneficio-item">
+                        <h4><i class="bi bi-info-circle"></i> Información detallada del producto</h4>
+                        <p>Se ofrecen descripciones detalladas y especificaciones técnicas, lo que ayuda a los clientes a tomar decisiones de compra informadas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img-container">
+                <img src="~/inicio/best price.jpg" alt="Imagen de beneficios" class="img-fluid img-thumbnail">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Testimonios</h2>
+
+    <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <p class="text-center">"ProtoDEV ha sido mi tienda de electrónica de confianza desde que comencé mis proyectos universitarios. Encuentro todo lo que necesito, desde protoboards hasta microcontroladores, a precios accesibles y con envío rápido."</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="~/inicio/bam margera.jpg" class="rounded-circle" alt="Imagen de persona 1" style="width: 100px; height: 100px; object-fit: cover;">
+                            <h5 class="mt-2">Mateo Arguello</h5>
+                            <p class="text-muted">Estudiante de Ingeniería Electrónica</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <p class="text-center">"En mi taller de robótica, utilizamos ProtoDEV para adquirir componentes electrónicos para nuestros proyectos. Valoro la amplia selección de productos, la calidad de los mismos y la atención al cliente siempre dispuesta a resolver cualquier duda. Recomiendo ProtoDEV a todos mis colegas y estudiantes."</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="~/inicio/chris pontius.jpg" class="rounded-circle" alt="Imagen de persona 2" style="width: 100px; height: 100px; object-fit: cover;">
+                            <h5 class="mt-2">Mathew Baquero</h5>
+                            <p class="text-muted">Profesor de Robótica</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <p class="text-center">"Gracias a ProtoDEV, pude hacer realidad mi proyecto de domótica. Encontré todos los sensores, actuadores y placas de desarrollo necesarios para construir mi sistema. La plataforma es fácil de usar, el proceso de compra es seguro y la entrega siempre es puntual. ProtoDEV es mi aliado perfecto para seguir innovando."</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="~/inicio/ehren mcghegey.jpg" class="rounded-circle" alt="Imagen de persona 3" style="width: 100px; height: 100px; object-fit: cover;">
+                            <h5 class="mt-2">Steven Carrillo</h5>
+                            <p class="text-muted">Emprendedor Tecnológico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>

@@ -6,7 +6,6 @@
 }
 
 <h1>Añadir Nuevo Producto</h1>
-
 <hr />
 <div class="row">
     <div class="row">
@@ -14,88 +13,78 @@
             <form asp-action="Create">
 
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-floating py-2 col-12">
-                <label asp-for="nombre" class="control-label"></label>
-                <input asp-for="nombre" class="form-control" />
-                <span asp-validation-for="nombre" class="text-danger"></span>
-            </div>
-            <div class="py-2 col-12">
-                <label asp-for="descripcion" class="ms-2 text-muted"></label>
-                <textarea asp-for="descripcion" class="form-control"></textarea>
-                
-            </div>
-            <div class="py-2 col-12">
-                <label asp-for="especificaciones" class="ms-2 text-muted"></label>
-                <textarea asp-for="especificaciones" class="form-control"></textarea>
-            </div>
-            <div class="form-floating py-2 col-12">
-                <label asp-for="fabricante" class="control-label"></label>
-                <input asp-for="fabricante" class="form-control" />
-                <span asp-validation-for="fabricante" class="text-danger"></span>
-            </div>
-            <div class="form-floating py-2 col-12">
-                <label asp-for="SKU" class="control-label"></label>
-                <input asp-for="SKU" class="form-control" />
-                <span asp-validation-for="SKU" class="text-danger"></span>
-            </div>
-            <div class="form-floating py-2 col-12">
-                <label asp-for="precioVenta" class="control-label"></label>
-                <input asp-for="precioVenta" class="form-control" />
-                <span asp-validation-for="precioVenta" class="text-danger"></span>
-            </div>
-            <div class="form-floating py-2 col-12">
-                <label asp-for="precio" class="control-label"></label>
-                <input asp-for="precio" class="form-control" />
-                <span asp-validation-for="precio" class="text-danger"></span>
-            </div>
-            <div class="form-floating py-2 col-12">
-                <label asp-for="precio50" class="control-label"></label>
-                <input asp-for="precio50" class="form-control" />
-                <span asp-validation-for="precio50" class="text-danger"></span>
-            </div>
-            <div class="form-floating py-2 col-12">
-                <label asp-for="precio100" class="control-label"></label>
-                <input asp-for="precio100" class="form-control" />
-                <span asp-validation-for="precio100" class="text-danger"></span>
-            </div>
-            <div class="form-floating py-2 col-12">
-                <select asp-for="CategoriaId" class ="form-control" asp-items="ViewBag.CategoriaId">
-                    <option disabled selected >-- Elegir Categoria --</option>
-                </select>
+                <div class="form-floating py-2 col-12">
+                    <label asp-for="nombre" class="control-label"></label>
+                    <input asp-for="nombre" class="form-control" />
+                    <span asp-validation-for="nombre" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <label asp-for="descripcion" class="ms-2 text-muted"></label>
+                    <input asp-for="descripcion" class="form-control" />
+                    <span asp-validation-for="descripcion" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <label asp-for="especificaciones" class="ms-2 text-muted"></label>
+                    <input asp-for="especificaciones" class="form-control" />
+                    <span asp-validation-for="especificaciones" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <label asp-for="fabricante" class="control-label"></label>
+                    <input asp-for="fabricante" class="form-control" />
+                    <span asp-validation-for="fabricante" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <label asp-for="SKU" class="control-label"></label>
+                    <input asp-for="SKU" class="form-control" />
+                    <span asp-validation-for="SKU" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <label asp-for="precioVenta" class="control-label"></label>
+                    <input asp-for="precioVenta" class="form-control" />
+                    <span asp-validation-for="precioVenta" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <label asp-for="precio" class="control-label"></label>
+                    <input asp-for="precio" class="form-control" />
+                    <span asp-validation-for="precio" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <label asp-for="precio50" class="control-label"></label>
+                    <input asp-for="precio50" class="form-control" />
+                    <span asp-validation-for="precio50" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <label asp-for="precio100" class="control-label"></label>
+                    <input asp-for="precio100" class="form-control" />
+                    <span asp-validation-for="precio100" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <select asp-for="CategoriaId" class="form-control" asp-items="ViewBag.CategoriaId">
+                        <option disabled selected>-- Elegir Categoria --</option>
+                    </select>
                     <label asp-for="CategoriaId" class="control-label"></label>
-                <span asp-validation-for="CategoriaId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="imagenURL" class="control-label"></label>
-                <input asp-for="imagenURL" class="form-control" />
-                <span asp-validation-for="imagenURL" class="text-danger"></span>
-            </div>
-            <div class="form-floating py-2 col-12">
-                <input type="submit" value="Crear" class="btn btn-primary" />
-            </div>
-            <div class="form-floating py-2 col-12">
-                <a asp-action="Index" class="btn btn-secondary">
-                    <i class="bi bi-arrow-return-left"></i> Regresar a la lista
-                </a>
-            </div>
-        </form>
+                    <span asp-validation-for="CategoriaId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="imagenURL" class="control-label"></label>
+                    <input asp-for="imagenURL" class="form-control" />
+                    <span asp-validation-for="imagenURL" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <input type="submit" value="Crear" class="btn btn-primary" />
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-return-left"></i> Regresar a la lista
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
 @section Scripts {
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            mergetags_list: [
-                { value: 'First.Name', title: 'First Name' },
-                { value: 'Email', title: 'Email' },
-            ],
-            ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
-        });
-    </script>
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

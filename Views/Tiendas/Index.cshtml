@@ -3,22 +3,27 @@
     ViewData["Title"] = "Index";
 }
 
+<h1>Catálogo de Productos</h1>
+
 <div class="row">
-    @foreach (var item in Model)
+    @foreach (var producto in Model)
     {
         <div class="col-3">
-            <div class="card my-2 store card custom-bg-color">
-                <img src="@item.imagenURL" class="card-img-top-custom">
-                <div class="card-body" style="height:6em;">
-                    <a class="a-cleanup" asp-controller="Tiendas" asp-route-id="@item.id">
-                        <h5 class="mb-3">@item.nombre</h5>
+            <div class="card my-2 store-card custom-bg-color">
+                <img src="@Url.Content(@producto.imagenURL)" class="card-img-top card-img-custom">
+                <div class="card-body text-center">
+                    <a class="a-cleanup" asp-controller="Tiendas" asp-action="Detalles" asp-route-id="@producto.id">
+                        <h5 class="card-title text-center">@producto.nombre</h5>
+                        <p class="card-text text-center">Fabricante: @producto.fabricante</p>
+                        <p class="card-text text-center">SKU: @producto.SKU</p>
                     </a>
                 </div>
-                <div class="card-body">
-                    <span class="card-text">@item.precioVenta.ToString("c")</span>
-                    <a asp-controller="Carritos" asp-action="AgregarAlCarrito" asp-route-id="@item.id" class="btn btn-primary">
+                <div class="card-body text-center">
+                    <p class="card-text"><strong>PVP:</strong> @producto.precioVenta.ToString("c")</p>
+                    <a asp-controller="Tiendas" asp-action="Detalles" asp-route-id="@producto.id" class="btn btn-primary">
                         Agregar al Carrito
                     </a>
+
                 </div>
             </div>
         </div>
