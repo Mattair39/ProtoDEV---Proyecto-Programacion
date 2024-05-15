@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProtoDEV___Proyecto_Programacion.Data;
 
@@ -11,9 +12,11 @@ using ProtoDEV___Proyecto_Programacion.Data;
 namespace ProtoDEV___Proyecto_Programacion.Migrations
 {
     [DbContext(typeof(ProtoDEV___Proyecto_ProgramacionContext))]
-    partial class ProtoDEV___Proyecto_ProgramacionContextModelSnapshot : ModelSnapshot
+    [Migration("20240514201554_Roles")]
+    partial class Roles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -304,7 +307,7 @@ namespace ProtoDEV___Proyecto_Programacion.Migrations
                     b.ToTable("Producto");
                 });
 
-            modelBuilder.Entity("ProtoDEV___Proyecto_Programacion.Models.ApplicationUser", b =>
+            modelBuilder.Entity("ProtoDEV___Proyecto_Programacion.Models.UsuarioAplicacion", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -317,14 +320,13 @@ namespace ProtoDEV___Proyecto_Programacion.Migrations
                     b.Property<string>("direccionCalle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("nombre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("nombre")
+                        .HasColumnType("int");
 
                     b.Property<string>("provincia")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasDiscriminator().HasValue("ApplicationUser");
+                    b.HasDiscriminator().HasValue("UsuarioAplicacion");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

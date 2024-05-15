@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProtoDEV___Proyecto_Programacion.Data;
 
@@ -11,9 +12,11 @@ using ProtoDEV___Proyecto_Programacion.Data;
 namespace ProtoDEV___Proyecto_Programacion.Migrations
 {
     [DbContext(typeof(ProtoDEV___Proyecto_ProgramacionContext))]
-    partial class ProtoDEV___Proyecto_ProgramacionContextModelSnapshot : ModelSnapshot
+    [Migration("20240514230433_Correcciones")]
+    partial class Correcciones
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
